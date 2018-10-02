@@ -1,4 +1,4 @@
-service: notes-app-2-api
+service: serverless-creditdog
 
 # Use the serverless-webpack plugin to transpile ES6
 plugins:
@@ -36,8 +36,10 @@ provider:
   # under process.env.
   environment:
     tableName: ${self:custom.tableName}
+    tableNameUserProfile: ${self:custom.tableNameUserProfile}
     stripeSecretKey: ${self:custom.environment.stripeSecretKey}
 
+  # Every Lambda needs permission to interact with other AWS infrastructure
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -52,6 +54,7 @@ provider:
       # the specific table for the stage
       Resource:
         - "Fn::GetAtt": [ NotesTable, Arn ]
+        - "Fn::GetAtt": [ UserProfileTable, Arn ]
 
 functions:
   # Defines an HTTP API endpoint that calls the main function in create.js
@@ -126,9 +129,29 @@ functions:
           cors: true
           authorizer: aws_iam
 
+  userprofile-create:
+      handler: userprofile/create.main
+      events:
+        - http:
+            path: userprofiles
+            method: post
+            cors: true
+            authorizer: aws_iam
+
+  user-profile-get:
+      # Defines an HTTP API endpoint that calls the main function in get.js
+      # - path: url path is /notes/{id}
+      # - method: GET request
+      handler: userprofile/get.main
+      events:
+        - http:
+            path: userprofiles/{id}
+            method: get
+            cors: true
+            authorizer: aws_iam          
+
 # Create our resources with separate CloudFormation templates
 resources:
-  #Functions
   # DynamoDB
   - ${file(resources/dynamodb-table.yml)}
   # S3
