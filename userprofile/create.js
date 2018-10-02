@@ -7,7 +7,12 @@ export async function main(event, context, callback) {
     TableName: process.env.tableNameUserProfile,
     Item: {
       userId: event.requestContext.identity.cognitoIdentityId,
-      Item: data
+      cardPrefs: data.cardPrefs,
+      cards: data.cards,
+      lastUpdated: data.lastUpdated,
+      registered: data.registered,
+      userName: data.userName,
+      rewards: data.rewards
     }
   };
 

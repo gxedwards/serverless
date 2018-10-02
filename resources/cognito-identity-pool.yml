@@ -15,6 +15,7 @@ Resources:
             Fn::GetAtt: [ "CognitoUserPool", "ProviderName" ]
             
   # IAM roles
+  # Created to map Auth and Unauth roles to the identity pool
   CognitoIdentityPoolRoles:
     Type: AWS::Cognito::IdentityPoolRoleAttachment
     Properties:
@@ -23,6 +24,8 @@ Resources:
       Roles:
         authenticated:
           Fn::GetAtt: [CognitoAuthRole, Arn]
+  #      unauthenticated: 
+  #       Fn::GetAtt: [CognitoUnauthRole, Arn]
           
   # IAM role used for authenticated users
   CognitoAuthRole:

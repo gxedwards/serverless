@@ -17,9 +17,9 @@ export async function main(event, context, callback) {
       // Return the retrieved item
       callback(null, success(result.Item));
     } else {
-      callback(null, failure({ status: false, error: "Item not found." }));
+      callback(null, success(result));
     }
   } catch (e) {
-    callback(null, failure({ status: false }));
+    callback(null, failure({ status: false,  error: JSON.stringify(e) }));
   }
 }
