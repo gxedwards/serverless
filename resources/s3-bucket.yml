@@ -1,0 +1,32 @@
+Resources:
+  AttachmentsBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      # Set the CORS policy
+      CorsConfiguration:
+        CorsRules:
+          -
+            AllowedOrigins:
+              - '*'
+            AllowedHeaders:
+              - '*'
+            AllowedMethods:
+              - GET
+              - PUT
+              - POST
+              - DELETE
+              - HEAD
+            MaxAge: 3000
+  S3HostingBucket:
+        Type: 'AWS::S3::Bucket'
+        Properties:
+          WebsiteConfiguration:
+            IndexDocument: index.html
+# Print out the name of the buckets that are created
+Outputs:
+  AttachmentsBucketName:
+    Value:
+      Ref: AttachmentsBucket
+  S3HostingBucketName:
+    Value:
+      Ref: S3HostingBucket
