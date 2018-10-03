@@ -1,0 +1,20 @@
+  userprofile-create:
+      handler: userprofile/create.main
+      events:
+        - http:
+            path: userprofiles
+            method: post
+            cors: true
+            authorizer: aws_iam
+
+  user-profile-get:
+      # Defines an HTTP API endpoint that calls the main function in get.js
+      # - path: url path is /notes/{id}
+      # - method: GET request
+      handler: userprofile/get.main
+      events:
+        - http:
+            path: userprofiles/{id}
+            method: get
+            cors: true
+            authorizer: aws_iam    

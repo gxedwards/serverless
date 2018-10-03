@@ -9,9 +9,9 @@ Resources:
           Name: email
           Required: true
           Mutable: true
-      # Set email as an alias
-      UsernameAttributes:
-        - email
+      # Set email as an alias (This will force the login to be the email - can also be phone number)
+      #UsernameAttributes:
+      #  - email
       AutoVerifiedAttributes:
         - email
 
@@ -28,10 +28,10 @@ Resources:
 
 # Print out the Id of the User Pool that is created
 Outputs:
-  UserPoolId:
+  CognitoUserPoolId:
     Value:
       Ref: CognitoUserPool
 
-  UserPoolClientId:
+  CognitoAppClientId:
     Value:
       Ref: CognitoUserPoolClient
