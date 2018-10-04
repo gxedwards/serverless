@@ -4,6 +4,14 @@ Based on [Serverless Stack](http://serverless-stack.com) is a free comprehensive
 
 The starter for this is from(https://github.com/AnomalyInnovations/serverless-stack-demo-client). And the repo for the tutorial [here](https://github.com/AnomalyInnovations/serverless-stack-com).
 
+#### AWS set up
+
+Make sure you have an AWS account configured to administer everything
+
+* https://docs.aws.amazon.com/cli/latest/userguide/cli-config-files.html
+
+TBD Add instructions on how to do this. `aws configure` etc
+
 #### Usage
 
 To use this repo locally you need to have the [Serverless framework](https://serverless.com) installed.
