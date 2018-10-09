@@ -1,6 +1,11 @@
-import * as dynamoDbLib from ".././libs/dynamodb-lib";
-import { success, failure } from ".././libs/response-lib";
-
+import * as dynamoDbLib from "../libs/dynamodb-lib";
+import { success, failure } from "../libs/response-lib";
+/**
+ * 
+ * @param {*} event 
+ * @param {*} context 
+ * @param {*} callback 
+ */
 export async function main(event, context, callback) {
   const data = JSON.parse(event.body);
   const params = {

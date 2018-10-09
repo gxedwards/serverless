@@ -1,4 +1,7 @@
   userprofile-create:
+      # Defines an HTTP API endpoint that calls the main function in create.js
+      # - path: url path is /userprofiles/{id}
+      # - method: GET request
       handler: userprofile/create.main
       events:
         - http:
@@ -9,7 +12,7 @@
 
   user-profile-get:
       # Defines an HTTP API endpoint that calls the main function in get.js
-      # - path: url path is /notes/{id}
+      # - path: url path is /userprofiles/{id}
       # - method: GET request
       handler: userprofile/get.main
       events:
@@ -18,3 +21,15 @@
             method: get
             cors: true
             authorizer: aws_iam    
+
+  userprofile-delete:
+      # Defines an HTTP API endpoint that calls the main function in delete.js
+      # - path: url path is /userprofiles/{id}
+      # - method: DELETE request
+      handler: userprofile/delete.main
+      events:
+        - http:
+            path: userprofiles/{id}
+            method: delete
+            cors: true
+            authorizer: aws_iam
