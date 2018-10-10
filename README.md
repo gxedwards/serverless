@@ -64,6 +64,16 @@ The serverless framework (https://serverless.com/) is a CLI tool that simplifies
 
 For AWS Serverless is an abstraction layer that will generate CloudFormation files. In this respect it has many similarities with AWS SAM.
 
+CLI Reference commands for AWS: https://serverless.com/framework/docs/providers/aws/cli-reference/
+
+Plugin registry: https://github.com/serverless/plugins.
+
+The following seem like useful plugins:
+* fullstack-serverless
+* serverless-offline
+* serverless-s3-encryption
+* serverless-plugin-simulate
+
 ## Cognito
 Amazon Cognito lets you add user sign-up, sign-in, and access control to your web and mobile apps quickly and easily. Amazon Cognito scales to millions of users and supports sign-in with social identity providers, such as Facebook, Google, and Amazon, and enterprise identity providers via SAML 2.0
 
