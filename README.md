@@ -59,17 +59,21 @@ The information that is needed for the client will have been put into the consol
 
 #### Key Concepts
 
-## serverless.yml
-TBD
+## Serverless & serverless.yml
+The serverless framework (https://serverless.com/) is a CLI tool that simplifies the building and deploying of serverless applications. This is aimed primarily at the backend code. The key to the serverless is a service which is defined in the serverless.yml file. Serverless was originally for AWS but it is now an abtraction layer over most cloud providers.
+
+For AWS Serverless is an abstraction layer that will generate CloudFormation files. In this respect it has many similarities with AWS SAM.
 
 ## Cognito
-TBD
+Amazon Cognito lets you add user sign-up, sign-in, and access control to your web and mobile apps quickly and easily. Amazon Cognito scales to millions of users and supports sign-in with social identity providers, such as Facebook, Google, and Amazon, and enterprise identity providers via SAML 2.0
 
-## API & Lambda Functions
-TBD
+## API Gateway & Lambda Functions
+Amazon API Gateway is an AWS service that enables developers to create, publish, maintain, monitor, and secure APIs at any scale. You can create APIs that access AWS or other web services, as well as data stored in the AWS Cloud. API Gateway can be considered a backplane in the cloud to connect AWS services and other public or private websites. It provides consistent RESTful application programming interfaces (APIs) for mobile and web applications to access AWS services.
+
+AWS Lambda is an event-driven, serverless computing platform provided by Amazon as a part of the Amazon Web Services. It is a computing service that runs code in response to events and automatically manages the computing resources required by that code.
 
 ## Cloud Formation
-TBD
+AWS CloudFormation provides a common language for you to describe and provision all the infrastructure resources in your cloud environment. CloudFormation allows you to use a simple text file to model and provision, in an automated and secure manner, all the resources needed for your applications across all regions and accounts. This file serves as the single source of truth for your cloud environment.
 
 ## Connecting from Client
 TBD
